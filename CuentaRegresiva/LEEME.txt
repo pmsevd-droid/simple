@@ -1,0 +1,39 @@
+CUENTA REGRESIVA
+================
+
+Cuenta el tiempo que falta para una fecha. Se queda en los íconos ocultos de la barra
+de tareas, con un ícono que muestra cuánto falta, y al llegar a cero abre una ventana
+de celebración con música.
+
+INSTALACIÓN
+1. Copia la carpeta a un lugar fijo, por ejemplo: Documentos\CuentaRegresiva.
+2. Abre CuentaRegresiva.exe.
+   Si sale "Windows protegió su PC": clic en "Más información" y luego en "Ejecutar de todas formas".
+   (Sale porque el programa no tiene firma digital de pago.)
+3. Escribe el nombre del evento, la fecha y la hora.
+4. Clic en "Listo, mandar a los íconos ocultos". Sigue contando ahí (flechita ^ de la barra de tareas).
+
+CÓMO FUNCIONA
+- Arriba se ve cuánto falta: en días, horas, minutos y segundos ("Todo"),
+  o solo en días, horas, minutos o segundos.
+- El ícono junto al reloj muestra los días que faltan (o las horas, minutos o segundos si falta poco).
+  Su color cambia: morado si falta más de una semana, naranja si falta menos, rojo si falta menos
+  de un día y verde cuando llegó el momento.
+- Al llegar a cero se abre la ventana "¡Felicidades!" y suena la música: la melodía festiva incluida
+  o una canción tuya (MP3, WAV, WMA o M4A) con "Elegir canción…".
+- Con "Abrir con Windows", se abre sola al prender la computadora, directo a los íconos ocultos.
+- La X de la ventana no cierra el programa: lo manda a los íconos ocultos.
+  Para cerrarlo de verdad: clic derecho en el ícono y "Salir".
+
+MENÚ (clic derecho en el ícono; doble clic para abrir la ventana)
+- Abrir cuenta regresiva / Probar celebración / Acerca de… / Salir.
+
+DESINSTALAR
+Desmarca "Abrir con Windows", elige "Salir" y borra la carpeta.
+La configuración está en %APPDATA%\CuentaRegresiva (también se puede borrar).
+
+CÓDIGO
+CuentaRegresiva.cs es el código fuente (C#, .NET Framework 4.8, que ya viene en Windows 11).
+El estilo (ventanas, avisos, menú, íconos, "Acerca de") está en ..\comun\Comun.cs, compartido con
+las demás utilidades. Para compilarlo tú mismo en Windows, abre compilar.bat, o escribe:
+  C:\Windows\Microsoft.NET\Framework64\v4.0.30319\csc.exe /codepage:65001 /target:winexe /win32icon:app.ico CuentaRegresiva.cs ..\comun\Comun.cs

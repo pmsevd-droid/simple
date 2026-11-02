@@ -1,0 +1,48 @@
+PROTECTOR DE AUDÍFONOS
+======================
+
+Silencia los altavoces de la laptop cuando se desconectan los audífonos,
+muestra un aviso y deja un ícono junto al reloj.
+
+INSTALACIÓN
+1. Copia la carpeta a un lugar fijo, por ejemplo: Documentos\ProtectorAudifonos
+   (si después la mueves, vuelve a abrir el programa para que se actualice el inicio automático).
+2. Abre ProtectorAudifonos.exe.
+   Si sale "Windows protegió su PC": clic en "Más información" y luego en "Ejecutar de todas formas".
+   (Sale porque el programa no tiene firma digital de pago.)
+3. Aparecerá un aviso y un ícono junto al reloj. Si no lo ves, abre la flechita ^ de la barra
+   de tareas y arrastra el ícono afuera.
+
+Ya queda configurado para abrirse solo cada vez que prendas Windows.
+
+CÓMO FUNCIONA
+- Mientras usas los audífonos, el programa silencia los altavoces "por adelantado".
+  Así, si los audífonos se salen, no suena nada fuerte.
+- Si se desconectan, sale el aviso "¡Se desconectaron los audífonos!" abajo a la derecha,
+  con un botón para volver a activar el sonido de los altavoces.
+- Si cambias a los altavoces a propósito (con los audífonos todavía conectados),
+  el programa lo detecta y les devuelve el volumen que tenían.
+
+MENÚ (clic en el ícono)
+- Proteger los altavoces: activa o desactiva todo (un punto naranja en el ícono = desactivado).
+- Al desconectar los audífonos: silenciar o bajar el volumen al 5 %.
+- Mostrar alerta.
+- Silenciar por adelantado: recomendado dejarlo activado.
+- Iniciar con Windows.
+- Activar sonido de los altavoces / Probar la alerta / Abrir configuración de sonido.
+- Acerca de… / Salir.
+
+El ícono cambia según dónde sale el sonido: audífonos, altavoz o altavoz silenciado.
+
+PRUEBA RÁPIDA
+Con música sonando en los audífonos, desconéctalos: no debería sonar nada y debe salir el aviso.
+
+DESINSTALAR
+Desmarca "Iniciar con Windows", elige "Salir" y borra la carpeta.
+La configuración está en %APPDATA%\ProtectorAudifonos (también se puede borrar).
+
+CÓDIGO
+ProtectorAudifonos.cs es el código fuente (C#, .NET Framework 4.8, que ya viene en Windows 11).
+El estilo (avisos, menú, íconos, "Acerca de") está en ..\comun\Comun.cs, compartido con las
+demás utilidades. Para compilarlo tú mismo en Windows, abre compilar.bat, o escribe:
+  C:\Windows\Microsoft.NET\Framework64\v4.0.30319\csc.exe /codepage:65001 /target:winexe /win32icon:app.ico ProtectorAudifonos.cs ..\comun\Comun.cs
